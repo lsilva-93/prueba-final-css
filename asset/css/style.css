@@ -1,0 +1,140 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Raleway', sans-serif;
+}
+
+nav {
+    display: flex;
+    
+    background-color: #141545;
+    height: 3rem;
+    
+    grid-area: nav;
+    
+}
+
+.logo {
+   width: 0px;
+}
+
+.texto-nav {
+    display: flex;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+nav div {
+    margin-right: 10px;
+ }
+
+ .contenedor-items {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto auto;
+    
+    grid-area: contenedor; 
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    align-content: center;
+    /*grid-gap: 2%; se pierde imagen*/
+ }
+
+ .post {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 30px;
+    background-color: #768FEE;
+    height: 95%;
+    border-radius: 10px;
+ }
+
+ .post img {
+    width: 100%;
+    border-radius: 5px;
+    filter: grayscale(90%);
+    transition-duration: 3s;
+ }
+
+.post:hover img {
+    filter: grayscale(0%);
+}
+
+button {
+    color: #141545;
+}
+
+.formulario {
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    grid-area: form;
+    text-align: center;
+}
+
+footer {
+    display: flex;
+    background-color: #768FEE;
+    height: 3rem;
+    justify-content: center;
+    align-items: center;
+    grid-area: footer;
+}
+
+
+body {
+    background-color: #EAECEA;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: "nav nav nav nav"
+                         "contenedor contenedor contenedor contenedor"
+                         "form form form form"
+                         "footer footer footer footer"
+                         ;
+}
+
+@media (min-width: 576px) {
+    body {
+        grid-template-areas: "nav contenedor contenedor contenedor"
+                            "nav contenedor contenedor contenedor"
+                            "nav form form form"
+                            "footer footer footer footer";
+    }
+    .contenedor-items {
+        justify-items: center;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+          
+        grid-gap: 5%;
+        margin: 10px;
+     }
+    .texto-nav {
+        flex-direction: column;
+        margin: 10px;
+        padding: 10px;
+        grid-gap: 30px;
+    }
+    nav {
+        height: 100%;
+        align-items: start;
+        justify-content: start;
+        flex-direction: column;
+        
+    }
+    
+}
+
+
+
+
+
+
